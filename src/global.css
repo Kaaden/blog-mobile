@@ -1,0 +1,79 @@
+html, body, :global(#root) {
+  height: 100%;
+  font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  margin: 0;
+  padding: 0;
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+  font-size: 0.16rem;
+}
+
+img {
+  width: 100%!important;
+}
+
+.line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* autoprefixer  : off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer   : on */
+}
+
+.line1 {
+  -webkit-line-clamp: 1;
+}
+
+.line2 {
+  -webkit-line-clamp: 2;
+}
+
+a, a:link, a:active, a:visited {
+  color: #1890ff;
+  text-decoration: none;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+@font-face {
+  font-family: "beyno";
+  src: url("http://kaaden.orrzt.com/BEYNO.ttf");
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.container-main {
+  width: 70%;
+  margin: .3rem auto;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+.spin-loading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: .1rem;
+}

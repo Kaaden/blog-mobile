@@ -1,0 +1,48 @@
+.containleft{
+    width:75%;
+    
+}
+
+.content {
+    font-family  : -apple-system, Helvetica Neue, Arial, PingFang SC, Hiragino Sans GB, STHeiti, Microsoft YaHei, Microsoft JhengHei, Source Han Sans SC, Noto Sans CJK SC, Source Han Sans CN, Noto Sans SC, Source Han Sans TC, Noto Sans CJK TC, WenQuanYi Micro Hei, SimSun, sans-serif;
+    line-height  : 2;
+    font-size    : 0.18rem;
+    color        : #404040;
+    text-indent  : .2rem;
+    margin-bottom: .2rem;
+}
+
+.desc {
+    width        : 100%;
+    color        : rgb(16, 142, 233);
+    font-style   : italic;
+    font-size    : 0.16rem;
+    margin-bottom: 0.2rem;
+    border-left  : 5px solid rgb(16, 142, 233);
+    padding      : 10px 20px;
+    border-bottom: 1px solid rgb(16, 142, 233);
+}
+
+.wrap {
+    width       : 100%;
+    column-gap  : 10px;
+    column-count: 4;
+    margin      : 0 auto;
+
+}
+.wrapItem {
+    padding      : 10px;
+    margin-bottom: 10px;
+    break-inside : avoid;
+
+   
+}
+.wrapItemImg {
+    width        : 100%;
+    border-radius: 4px;
+
+}
+
+.wrapItemImg:hover {
+    box-shadow: 0 0 15px #d9d8d9;
+}
