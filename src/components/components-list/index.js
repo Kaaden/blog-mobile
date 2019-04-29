@@ -1,11 +1,12 @@
 import { connect } from "dva"
 import { Component } from "react"
 import styles from "./index.css"
-import { Tag, Divider, Skeleton, Spin, Icon } from "antd"
-import LazyLoad from 'react-lazyload';
-import placeImg from '../../assets/pic.png'
-import Ellipsis from 'ant-design-pro/lib/Ellipsis';
+import { Card, Skeleton, Spin, Icon } from "antd"
+// import LazyLoad from 'react-lazyload';
+// import placeImg from '../../assets/pic.png'
+// import Ellipsis from 'ant-design-pro/lib/Ellipsis';
 import router from 'umi/router';
+const { Meta } = Card;
 let fetch = false
 class List extends Component {
     state = { loading: false, skele: false, pageindex: 1 }
@@ -53,22 +54,32 @@ class List extends Component {
 
                     <Skeleton active loading={skele}>
                         {pageList.length > 0 && pageList.map((item, index) => (
-                            <div className={styles.mainItem} key={index} onClick={() => this.goDetail(item.id)}>
-                                <div className={styles.mainItemContent}>
-                                    <Ellipsis length={25} className={styles.mainItemTitle}>{item.title}</Ellipsis>
-                                    <Ellipsis length={100} className={styles.mainItemTxt}>{item.description}</Ellipsis>
-                                    <div className={styles.mainItemOrther}>
-                                        <Tag color="#108ee9">{item.category}</Tag>
-                                        <Divider type="vertical" />
-                                        <span>{item.authors}</span>
-                                        <Divider type="vertical" />
-                                        <span>{item.time}</span>
-                                    </div>
-                                </div>
-                                <LazyLoad height={200} offset={100}>
-                                    <img src={item.img} alt="" className={styles.mainItemImg} onError={(e) => e.target.src = placeImg} />
-                                </LazyLoad>
-                            </div>
+                            // <div className={styles.mainItem} key={index} onClick={() => this.goDetail(item.id)}>
+                            //     <div className={styles.mainItemContent}>
+                            //         <Ellipsis length={25} className={styles.mainItemTitle}>{item.title}</Ellipsis>
+                            //         <Ellipsis length={100} className={styles.mainItemTxt}>{item.description}</Ellipsis>
+                            //         <div className={styles.mainItemOrther}>
+                            //             <Tag color="#108ee9">{item.category}</Tag>
+                            //             <Divider type="vertical" />
+                            //             <span>{item.authors}</span>
+                            //             <Divider type="vertical" />
+                            //             <span>{item.time}</span>
+                            //         </div>
+                            //     </div>
+                            //     <LazyLoad height={200} offset={100}>
+                            //         <img src={item.img} alt="" className={styles.mainItemImg} onError={(e) => e.target.src = placeImg} />
+                            //     </LazyLoad>
+                            // </div>
+                            <Card
+                                hoverable
+                                style={{ width: 240 }}
+                                cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+                            >
+                                <Meta
+                                    title="Europe Street beat"
+                                    description="www.instagram.com"
+                                />
+                            </Card>
                         ))}
                     </Skeleton>
                 </div>

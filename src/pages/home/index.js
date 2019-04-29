@@ -1,16 +1,16 @@
 import { connect } from "dva"
 import { Component } from "react"
-import { Head, List, Navigator, Introduct, Footer } from "../../components"
+import { Head, List, Introduct, Footer } from "../../components"
 class Index extends Component {
   render() {
     return (
       <div className="container">
 
-        <Navigator />
+        {/* <Navigator /> */}
         <Head />
         <div className="container-main">
           <List />
-          <Introduct />
+          {/* <Introduct /> */}
         </div>
         <Footer />
       </div>
