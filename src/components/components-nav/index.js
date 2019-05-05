@@ -38,7 +38,6 @@ class Navigtor extends Component {
         }
     }
     onScroll = (e) => {
-        console.log(e)
         const body = document.documentElement;
         const scrollTop = body.scrollTop;
         this.changeData(scrollTop)

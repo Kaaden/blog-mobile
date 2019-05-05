@@ -1,8 +1,9 @@
 import styles from "./index.css"
-import { Icon, Tag, Statistic } from "antd"
+import { Icon, Tag, Statistic, Avatar, Card } from "antd"
 import { connect } from "dva"
 import { Component } from "react"
 import placeImg from '../../assets/pic.png'
+const { Meta } = Card;
 class Introduct extends Component {
     componentDidMount() {
         this.getData()
@@ -21,23 +22,30 @@ class Introduct extends Component {
 
     render() {
         const { introduct, tags } = this.props
+        const Desc = (
+            <div>
+                <div className={styles.mainDesc}>{introduct.description}</div>
+                <div className={styles.mainSame}><Icon type="mail" style={{ marginRight: ".5rem" }} />{introduct.email}</div>
+                <div className={styles.mainSame}><Icon type="environment" style={{ marginRight: ".5rem" }} />{introduct.city}</div>
+            </div>
+        )
         return (
             <div className={styles.main}>
-                <div className={styles.mainItem}>
-                    <img className={styles.mainImg} src={introduct.logo} alt="" onError={(e) => e.target.src = placeImg} />
-                    <div className={styles.mainItemContent}>
-                        <div className={styles.mainName}>{introduct.user}</div>
-                        <div className={styles.mainDesc}>{introduct.description}</div>
-                        <div className={styles.mainSame}><Icon type="mail" style={{ marginRight: ".1rem" }} />{introduct.email}</div>
-                        <div className={styles.mainSame}><Icon type="environment" style={{ marginRight: ".1rem" }} />{introduct.city}</div>
-                        <div className={styles.mainItemBottom}>
-                            <a href="https://github.com/Kaaden" target={"_blank"}><Icon className={styles.iconItem} type="github" /></a>
-                            <a href="https://weibo.com/2332838831/profile?topnav=1&wvr=6&is_all=1" target={"_blank"}><Icon className={styles.iconItem} type="weibo-circle" /></a>
-                            <a href="http://kaaden.orrzt.com/admin#/" target={"_blank"}> <Icon className={styles.iconItem} type="codepen-circle" /></a>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.mainItem} style={{ padding: "0.1rem 0.2rem" }}>
+                <Card
+                    style={{ width: "100%" }}
+                    actions={[
+                        <a href="https://github.com/Kaaden" target={"_blank"}><Icon type="github" style={{ fontSize: "1rem" }} /></a>,
+                        <a href="https://weibo.com/2332838831/profile?topnav=1&wvr=6&is_all=1" target={"_blank"}><Icon type="weibo-circle" style={{ fontSize: "1rem" }} /></a>,
+                        <a href="http://kaaden.orrzt.com/admin#/" target={"_blank"}> <Icon type="codepen-circle" style={{ fontSize: "1rem" }} /></a>]}
+                >
+                    <Meta
+                        avatar={<Avatar src={introduct.logo} />}
+                        title={introduct.user}
+                        description={Desc}
+                    />
+                </Card>
+
+                <div className={styles.mainItem} >
                     <div className={styles.mainItemTile}><Icon type="tags" style={{ marginRight: ".1rem" }} />标签</div>
                     <div className={styles.mainItemtag}>
                         {tags.length > 0 && tags.map((item, index) => (
@@ -47,21 +55,10 @@ class Introduct extends Component {
                     </div>
                 </div>
 
-                <div className={styles.mainItem} style={{ padding: "0.1rem 0.2rem" }}>
+                <div className={styles.mainItem} >
                     <div className={styles.mainItemTile}><Icon type="fire" style={{ marginRight: ".1rem" }} />访问量</div>
                     <div className={styles.mainItemtag}><Statistic value={introduct.pageview} /></div>
                 </div>
-                {/* <div className="syno-user">
-                    <div className="syno-tag">标签</div>
-
-                </div>
-
-
-                <div className="syno-user"  >
-                    <div className="syno-tag">访问量</div>
-
-                </div > */}
-
 
 
 

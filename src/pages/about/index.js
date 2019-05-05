@@ -28,6 +28,7 @@ class Index extends Component {
             <div className="container">
                 <Navigator />
                 <Head />
+                <Introduct />
                 <div className="container-main">
                     <Skeleton active loading={loading}>
                         <div className={styles.containleft}>
@@ -46,7 +47,6 @@ class Index extends Component {
                             </div>
                         </div>
                     </Skeleton>
-                    <Introduct />
                 </div>
                 <Footer />
             </div >

@@ -1,69 +1,37 @@
 .main {
-    width: 20%;
+    margin: 1rem;
 }
 
 .mainItem {
     display: flex;
-    flex-direction: column;
     box-shadow: 0 0 10px #e1e4e8;
-    margin-bottom: 0.3rem;
+    margin-top: 1rem;
+    flex-direction: column;
+    padding: .5rem 1rem;
 }
 
 .mainItem:hover {
     box-shadow: 0 0 20px #e1e4e8;
 }
 
-.mainImg {
-    width: 100%;
-    height: 230px;
-}
-
-.mainItemContent {
-    padding: 0.1rem .2rem;
-}
-
-.mainName {
-    font-weight: 600;
-    font-size: 0.22rem;
-    color: #24292e;
-}
-
 .mainDesc {
-    font-size: .14rem;
+    font-size: .7rem;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     line-height: 1.5;
-    margin-bottom: .1rem;
-    color: #24292e;
+    margin-bottom: .5rem;
+    color: rgba(0, 0, 0, 0.45);
 }
 
 .mainSame {
-    margin-bottom: .1rem;
-    color: #24292e;
-    font-size: .14rem;
-}
-
-.mainItemBottom {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: .2rem;
-}
-
-.iconItem {
-    color: #9EABB3;
-    margin-right: 0.3rem;
-    cursor: pointer;
-    font-size: 0.28rem;
-}
-
-.iconItem:hover {
-    color: #1890ff
+    margin-bottom: .5rem;
+    color: rgba(0, 0, 0, 0.45);
+    font-size: .7rem;
 }
 
 .mainItemTile {
-    font-size: 0.22rem;
+    font-size: 0.8rem;
     font-weight: 600;
+    margin-bottom: .5rem;
 }
 
 .mainItemtag {
