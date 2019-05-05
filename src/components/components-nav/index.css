@@ -23,5 +23,14 @@
 }
 
 .mainSel {
-  visibility: hidden;
+    visibility: hidden;
+}
+
+.navItem {
+    font-size: 0.8rem;
+    font-family: "beyno";
+}
+
+.navItem:last-child {
+    margin: 0 !important;
 }

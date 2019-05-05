@@ -29,8 +29,8 @@ class Index extends Component {
     return (
       <div className="container">
         <Spin spinning={loading}>
-
           <Navigator />
+          <BackTop />
           <TitleComponents detail={detail} />
           <Skeleton active loading={loading}>
 
@@ -56,8 +56,9 @@ const TitleComponents = ({ detail }) => (
       <div className={styles.mainTime}>{detail.time}</div>
     </div>
     <div>
-      <BackTop />
+      
     </div>
+
   </div>
 )
 

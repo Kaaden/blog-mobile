@@ -3,7 +3,7 @@ import { Component } from "react"
 import classnames from "classnames"
 import router from 'umi/router';
 import { connect } from "dva"
-import { Icon } from "antd"
+import { Icon, Popover } from "antd"
 let pathItem = "/"
 class Navigtor extends Component {
     state = { list: ["HOME", "ABOUT"], isShow: false, path: "/" }
@@ -38,6 +38,7 @@ class Navigtor extends Component {
         }
     }
     onScroll = (e) => {
+        console.log(e)
         const body = document.documentElement;
         const scrollTop = body.scrollTop;
         this.changeData(scrollTop)
@@ -53,17 +54,18 @@ class Navigtor extends Component {
     }
     render() {
         const { isNav } = this.props
-        const { path } = this.state
+        const { path, list } = this.state
+        const content = (list.map((item, index) => <p className={styles.navItem} key={index} onClick={() => this.pathGo(item)}>{item}</p>));
         return (
             <div className={classnames([styles.main, { [styles.mainSel]: isNav }])}  >
                 <div className={styles.nav}>
                     {path.includes("detail") && <Icon type="arrow-left" style={{ fontSize: "1rem", cursor: "pointer" }} onClick={() => this.pathBack()} />}
+
                     <div style={{ flex: "1", display: "flex", justifyContent: "flex-end" }}>
-                        <Icon type="appstore" style={{ fontSize: "1.5rem" }} />
+                        <Popover placement="bottomRight" content={content} trigger="click">
+                            <Icon type="appstore" style={{ fontSize: "1.5rem" }} />
+                        </Popover>
                     </div>
-                    {/* <div style={{ flex: "1", display: "flex", justifyContent: "flex-end" }}>
-                        {list.map((item, index) => <div className={styles.navItem} key={index} onClick={() => this.pathGo(item)}>{item}</div>)}
-                    </div> */}
                 </div>
             </div>
         )
