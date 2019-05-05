@@ -1,7 +1,7 @@
 import { connect } from "dva"
 import { Component } from "react"
 import styles from "./index.css"
-// import { Navigator } from "../../components"
+import { Navigator } from "../../components"
 import { Skeleton, BackTop, Spin, Avatar, Icon } from "antd"
 class Index extends Component {
   state = { id: "", loading: false }
@@ -30,7 +30,7 @@ class Index extends Component {
       <div className="container">
         <Spin spinning={loading}>
 
-          {/* <Navigator /> */}
+          <Navigator />
           <TitleComponents detail={detail} />
           <Skeleton active loading={loading}>
 

@@ -53,15 +53,17 @@ class Navigtor extends Component {
     }
     render() {
         const { isNav } = this.props
-        const { list, path } = this.state
+        const { path } = this.state
         return (
             <div className={classnames([styles.main, { [styles.mainSel]: isNav }])}  >
                 <div className={styles.nav}>
-                    {path.includes("detail") && <Icon type="arrow-left" style={{ fontSize: ".3rem", cursor: "pointer" }} onClick={() => this.pathBack()} />}
-
+                    {path.includes("detail") && <Icon type="arrow-left" style={{ fontSize: "1rem", cursor: "pointer" }} onClick={() => this.pathBack()} />}
                     <div style={{ flex: "1", display: "flex", justifyContent: "flex-end" }}>
-                        {list.map((item, index) => <div className={styles.navItem} key={index} onClick={() => this.pathGo(item)}>{item}</div>)}
+                        <Icon type="appstore" style={{ fontSize: "1.5rem" }} />
                     </div>
+                    {/* <div style={{ flex: "1", display: "flex", justifyContent: "flex-end" }}>
+                        {list.map((item, index) => <div className={styles.navItem} key={index} onClick={() => this.pathGo(item)}>{item}</div>)}
+                    </div> */}
                 </div>
             </div>
         )
