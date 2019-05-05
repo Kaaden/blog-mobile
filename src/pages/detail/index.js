@@ -1,7 +1,7 @@
 import { connect } from "dva"
 import { Component } from "react"
 import styles from "./index.css"
-import { Navigator } from "../../components"
+// import { Navigator } from "../../components"
 import { Skeleton, BackTop, Spin, Avatar, Icon } from "antd"
 class Index extends Component {
   state = { id: "", loading: false }
@@ -11,6 +11,7 @@ class Index extends Component {
     if (id) {
       this.getData(id)
     }
+    // document.documentElement.scrollTop = 0
   }
   getData = async (id) => {
     this.setState({ loading: true })
@@ -29,10 +30,10 @@ class Index extends Component {
       <div className="container">
         <Spin spinning={loading}>
 
-          <Navigator />
+          {/* <Navigator /> */}
           <TitleComponents detail={detail} />
           <Skeleton active loading={loading}>
-         
+
             <div dangerouslySetInnerHTML={{ __html: detail.content }} className={styles.mainHtml}></div>
           </Skeleton>
           <AboutComponents logo={introduct.logo} name={introduct.user} />
